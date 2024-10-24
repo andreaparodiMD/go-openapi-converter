@@ -2,3 +2,8 @@ vendor
 go-openapi-converter
 credentials.json
 .DS_Store
+
+*.docx
+
+*.iml
+
