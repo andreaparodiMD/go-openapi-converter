@@ -90,7 +90,7 @@ func createBodyComponent(component *openapi3.Schema, doc *document.Document) {
 		}
 
 		if fieldData.Example != nil {
-			cell.AddParagraph().AddRun().AddText(fmt.Sprintf("Example: %s", fieldData.Example.(string)))
+			//			cell.AddParagraph().AddRun().AddText(fmt.Sprintf("Example: %s", fieldData.Example.(string)))
 		}
 
 		if fieldData.Pattern != "" {

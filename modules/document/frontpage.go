@@ -41,19 +41,19 @@ func (s docHandler) BuildFrontpage() {
 		run = row.AddCell().AddParagraph().AddRun()
 		run.Properties().SetBold(true)
 		run.AddText("Contact Person")
-		row.AddCell().AddParagraph().AddRun().AddText(s.swagger.Info.Contact.Name)
+		//row.AddCell().AddParagraph().AddRun().AddText(s.swagger.Info.Contact.Name)
 
 		row = table.AddRow()
 		run = row.AddCell().AddParagraph().AddRun()
 		run.Properties().SetBold(true)
 		run.AddText("Contact URL")
-		row.AddCell().AddParagraph().AddRun().AddText(s.swagger.Info.Contact.URL)
+		//row.AddCell().AddParagraph().AddRun().AddText(s.swagger.Info.Contact.URL)
 
 		row = table.AddRow()
 		run = row.AddCell().AddParagraph().AddRun()
 		run.Properties().SetBold(true)
 		run.AddText("Contact Email")
-		row.AddCell().AddParagraph().AddRun().AddText(s.swagger.Info.Contact.Email)
+		//row.AddCell().AddParagraph().AddRun().AddText(s.swagger.Info.Contact.Email)
 	}
 
 	// Servers section

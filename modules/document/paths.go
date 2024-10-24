@@ -128,8 +128,9 @@ func buildSpec(doc *document.Document, swagger *openapi3.Swagger, endpoint *open
 				paragraph := cellPara.AddRun()
 				paragraph.Properties().SetBold(true)
 				paragraph.AddText(securityKey)
-
-				row.AddCell().AddParagraph().AddRun().AddText(securityDetail.Value.Name)
+				if securityDetail != nil {
+					row.AddCell().AddParagraph().AddRun().AddText(securityDetail.Value.Name)
+				}
 			}
 		}
 	}
@@ -323,11 +324,12 @@ func buildSpec(doc *document.Document, swagger *openapi3.Swagger, endpoint *open
 	// Response body schema & example section
 	{
 		if len(endpoint.Responses) > 0 {
-			para := doc.AddParagraph()
-			run := para.AddRun()
-			para.SetStyle("Heading3")
 
 			for httpStatus := range endpoint.Responses {
+				para := doc.AddParagraph()
+				run := para.AddRun()
+				para.SetStyle("Heading3")
+
 				run.AddText("Response Body Schema - " + httpStatus)
 
 				if endpoint.Responses[httpStatus].Ref != "" {
