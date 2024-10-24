@@ -128,7 +128,7 @@ func buildSpec(doc *document.Document, swagger *openapi3.Swagger, endpoint *open
 				paragraph := cellPara.AddRun()
 				paragraph.Properties().SetBold(true)
 				paragraph.AddText(securityKey)
-				if securityDetail != nil {
+				if securityDetail != nil && securityDetail.Value != nil {
 					row.AddCell().AddParagraph().AddRun().AddText(securityDetail.Value.Name)
 				}
 			}
